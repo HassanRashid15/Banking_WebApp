@@ -8,6 +8,8 @@ import FloatingButton from "./component/FloatingButton";
 import Home from "./pages/Home.js"; 
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Login from "./component/Login.js";
+import ScrollToTopButton from "./component/ScrollToTopButton.js";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -40,13 +42,15 @@ const Content = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/contact" element={<Contact />} />
           {/* You can add more routes here as needed */}
         </Routes>
       </div>
       <Footer />
-      <SideOption />
-      <FloatingButton />
+      {/* <SideOption /> */}
+      {/* <FloatingButton /> */}
+      <ScrollToTopButton/>
     </div>
   );
 };
