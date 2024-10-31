@@ -23,11 +23,12 @@ const settings = {
   infinite: true,
   speed: 5000, // Adjust speed for a smooth scrolling effect
   autoplay: true,
-  autoplaySpeed: 0, // Set to 0 for continuous scrolling
-  slidesToShow: 5, // Adjust based on how many logos you want visible
-  slidesToScroll: 1, // This can be 1 for smoother transitions
-  cssEase: "linear", // Make the transition linear for continuous effect
-  draggable: false, // Disable dragging to keep it moving smoothly
+  rtl:true,
+  autoplaySpeed: 0, 
+  slidesToShow: 5, 
+  slidesToScroll: 1, 
+  cssEase: "linear", 
+  draggable: false, 
 };
 
   // Duplicate logos array to achieve seamless effect
@@ -48,21 +49,31 @@ const settings = {
   ];
 
   return (
-    <div className="relative bg-gray-100 py-4 overflow-hidden">
-      {/* Left fade effect */}
-      <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-white to-transparent z-10"></div>
-      {/* Right fade effect */}
-      <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-white to-transparent z-10"></div>
+    <>
+      <div className="text-center my-10">
+        <div className="my-10">
+          <h1 class="text-3xl font-bold text-center text-slate-800 mb-3">
+            Empower Your Wealth
+          </h1>
+          <p className="text-xl font-medium text-black-600 my-5">
+            Wealth Management Tailored for You, Backed by Trusted Banks
+          </p>
+        </div>
+        <div className="relative py-4 overflow-hidden">
+          <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-white to-transparent z-10"></div>
+          <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-white to-transparent z-10"></div>
 
-      <Slider {...settings}>
-        {logos.map((logo, index) => (
-          <div key={index} className="flex justify-center">
-            <img src={logo} alt={`Logo ${index + 1}`} className="h-12" />{" "}
-            {/* Adjust logo size if necessary */}
-          </div>
-        ))}
-      </Slider>
-    </div>
+          <Slider {...settings}>
+            {logos.map((logo, index) => (
+              <div key={index} className="flex justify-center">
+                <img src={logo} alt={`Logo ${index + 1}`} className="h-12" />{" "}
+                {/* Adjust logo size if necessary */}
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </div>
+    </>
   );
 };
 

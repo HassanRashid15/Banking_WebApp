@@ -33,11 +33,15 @@ const Navbar = () => {
 
         <div className="hidden md:block">
           <div class="banner">
-            <a href="/login" className="butn px-4 py-2 butn__new">
-                <button>Sign Up</button>
+            <a href="/signup" className="butn px-4 py-2 butn__new">
+              <button>Sign Up</button>
             </a>
           </div>
-        
+          <div class="banner">
+            <a href="/login" className="butn px-4 py-2 butn__new">
+              <button>Login</button>
+            </a>
+          </div>
         </div>
 
         {/* Toggle Button for Mobile Menu */}

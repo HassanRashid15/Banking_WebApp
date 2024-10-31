@@ -10,6 +10,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Login from "./component/Login.js";
 import ScrollToTopButton from "./component/ScrollToTopButton.js";
+import Signup from "./component/Signup.js";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -42,15 +43,16 @@ const Content = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
           {/* You can add more routes here as needed */}
         </Routes>
       </div>
       <Footer />
       {/* <SideOption /> */}
       {/* <FloatingButton /> */}
-      <ScrollToTopButton/>
+      <ScrollToTopButton />
     </div>
   );
 };

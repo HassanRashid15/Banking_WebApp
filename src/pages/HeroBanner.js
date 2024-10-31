@@ -16,7 +16,7 @@ function HeroBanner() {
                     Microfinance App
                   </span>
                 </div>
-                <h1 class="py-8 text-center text-gray-900 font-bold font-manrope text-5xl lg:text-left leading-[70px]">
+                <h1 class="py-8 text-center text-gray-900 font-bold font-manrope text-5xl lg:text-left leading-[70px] pt-0">
                   Expanding the 
                    <span class="text-blue-500" style={{padding:'0px 5px'}}>
                     Financial </span> Frontier With You.

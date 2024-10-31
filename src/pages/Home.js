@@ -6,7 +6,8 @@ function Home() {
   return (
     <div>
       <HeroBanner />
-      <MarqueeSlider/>
+      <MarqueeSlider />
+     
     </div>
   );
 }
