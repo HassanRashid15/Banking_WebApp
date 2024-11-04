@@ -37,7 +37,7 @@ function Signup() {
 
   return (
     <div>
-      <div className="h-screen md:flex">
+      <div className="h-screen md:flex  mb-7">
         <div className="relative overflow-hidden md:flex w-1/2 bg-gradient-to-tr from-blue-600 to-blue-300 justify-around items-center hidden">
           <div>
             <h1 className="text-white font-bold text-4xl font-sans">
@@ -53,7 +53,7 @@ function Signup() {
               Read More
             </button>
           </div>
-          {/* Decorative circles */}
+        
           <div className="absolute -bottom-32 -left-40 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
           <div className="absolute -bottom-40 -left-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
           <div className="absolute -top-40 -right-0 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
@@ -61,7 +61,7 @@ function Signup() {
         </div>
         <div className="flex md:w-1/2 justify-center py-10 items-center bg-white">
           <form className="bg-white login-form-custom" onSubmit={handleSubmit}>
-            <p className="text-sm font-normal text-gray-600">Welcome Back!!</p>
+            <p className="text-md font-normal text-gray-600">Welcome Back!!</p>
             <h1 className="text-gray-800 font-bold text-2xl mb-4">
               Sign Up Form
             </h1>
@@ -83,8 +83,6 @@ function Signup() {
                 <span className="text-red-500 text-xs">{errors.fullName}</span>
               )}
             </div>
-
-            {/* Username Field */}
             <div className="flex flex-col mb-4 mt-5">
               <div
                 className="flex items-center border-b-2 border-gray-300 py-2 px-3 transition-colors duration-200 focus-within:border-blue-500"
@@ -102,8 +100,6 @@ function Signup() {
                 <span className="text-red-500 text-xs">{errors.username}</span>
               )}
             </div>
-
-            {/* Email Field */}
             <div className="flex flex-col mb-4 mt-5">
               <div
                 className="flex items-center border-b-2 border-gray-300 py-2 px-3 transition-colors duration-200 focus-within:border-blue-500"
@@ -123,7 +119,6 @@ function Signup() {
             </div>
 
             <div className="flex flex-col mb-4 mt-5">
-              {/* Password Field */}
               <div
                 className="flex items-center border-b-2 border-gray-300 py-2 px-3 transition-colors duration-200 focus-within:border-blue-500 justify-between"
                 style={{ paddingLeft: "0px" }}
@@ -176,8 +171,6 @@ function Signup() {
               {errors.password && (
                 <span className="text-red-500 text-xs">{errors.password}</span>
               )}
-
-              {/* Confirm Password Field */}
               <div
                 className="flex items-center border-b-2 border-gray-300 py-2 px-3 mt-4 transition-colors duration-200 focus-within:border-blue-500 justify-between"
                 style={{ paddingLeft: "0px" }}
@@ -243,9 +236,9 @@ function Signup() {
             >
               Sign Up
             </button>
-            <span className="text-sm ml-2 hover:text-blue-500 cursor-pointer">
+            {/* <span className="text-sm ml-2 hover:text-blue-500 cursor-pointer">
               Forgot Password?
-            </span>
+            </span> */}
           </form>
         </div>
       </div>

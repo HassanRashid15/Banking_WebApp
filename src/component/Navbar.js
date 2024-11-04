@@ -31,7 +31,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="hidden md:block">
+        <div className="hidden md:flex">
           <div class="banner">
             <a href="/signup" className="butn px-4 py-2 butn__new">
               <button>Sign Up</button>

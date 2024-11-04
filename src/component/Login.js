@@ -1,159 +1,107 @@
-// LoginSignupComponent.jsx
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 
-const Login = () => {
-  const [isLogin, setIsLogin] = useState(true);
-  const canvasRef = useRef(null);
+function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const colors = ["#4a90e2", "#50E3C2", "#9013FE", "#B8E986", "#FF0080"];
-    const circles = Array.from({ length: 50 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      radius: Math.random() * 10 + 5,
-      dx: Math.random() - 0.5,
-      dy: Math.random() - 0.5,
-      color: colors[Math.floor(Math.random() * colors.length)],
-    }));
-
-    const draw = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      circles.forEach((circle) => {
-        ctx.beginPath();
-        ctx.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2);
-        ctx.fillStyle = circle.color;
-        ctx.fill();
-      });
-    };
-
-    const update = () => {
-      circles.forEach((circle) => {
-        circle.x += circle.dx;
-        circle.y += circle.dy;
-
-        if (
-          circle.x + circle.radius > canvas.width ||
-          circle.x - circle.radius < 0
-        )
-          circle.dx *= -1;
-        if (
-          circle.y + circle.radius > canvas.height ||
-          circle.y - circle.radius < 0
-        )
-          circle.dy *= -1;
-      });
-      draw();
-      requestAnimationFrame(update);
-    };
-
-    update();
-  }, []);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Handle login logic here
+  };
 
   return (
-    <div className="relative flex items-center justify-center h-screen w-screen overflow-hidden bg-gradient-to-r from-blue-500 to-purple-600">
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full z-0" />
+    <div>
+      <section className="flex flex-col mb-3 md:flex-row  items-center">
+        <div className="bg-white w-full md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 xl:w-1/3 px-6 lg:px-16 xl:px-12 flex items-center justify-center">
+          <div className="w-full h-100">
+            <h1 className="text-xl md:text-2xl font-bold leading-tight mt-12">
+              Log in to your account
+            </h1>
 
-      {/* Background Overlay */}
-      <div
-        className={`absolute top-0 left-0 h-full w-1/2 z-10 bg-gradient-to-r ${
-          isLogin ? "from-indigo-500" : "from-green-500"
-        } transition-all duration-500`}
-      ></div>
-      <div
-        className={`absolute top-0 right-0 h-full w-1/2 z-10 bg-gradient-to-r ${
-          isLogin ? "to-purple-500" : "to-yellow-500"
-        } transition-all duration-500`}
-      ></div>
+            <form className="mt-6" onSubmit={handleSubmit}>
+              <div>
+                <label className="block text-gray-700" htmlFor="email">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter Email Address"
+                  className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-white focus:outline-none"
+                  required
+                  aria-label="Email Address"
+                />
+              </div>
 
-      {/* Container */}
-      <div
-        className="relative flex z-20 w-10/12 max-w-3xl overflow-hidden bg-white bg-opacity-10 backdrop-blur-md rounded-lg shadow-lg transition-transform duration-700 transform"
-        style={{ transform: `translateX(${isLogin ? "0" : "-50%"})` }}
-      >
-        {/* Login Form */}
-        <div
-          className={`flex flex-col items-center justify-center p-10 w-1/2 space-y-4 ${
-            isLogin ? "opacity-100" : "opacity-0 pointer-events-none"
-          } transition-opacity duration-500`}
-        >
-          <h2 className="text-3xl font-bold text-white">Login</h2>
-          <form className="flex flex-col gap-4 w-full">
-            <input
-              type="text"
-              placeholder="Username"
-              className="p-3 rounded bg-white bg-opacity-20 placeholder-white text-white outline-none focus:ring-2 focus:ring-blue-400"
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              className="p-3 rounded bg-white bg-opacity-20 placeholder-white text-white outline-none focus:ring-2 focus:ring-blue-400"
-            />
+              <div className="mt-4">
+                <label className="block text-gray-700" htmlFor="password">
+                  Password
+                </label>
+                <input
+                  type="password"
+                  id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Enter Password"
+                  className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-white focus:outline-none"
+                  minLength="6"
+                  required
+                  aria-label="Password"
+                />
+              </div>
+
+              <div className="text-right mt-2">
+                <button
+                  type="button"
+                  className="text-sm font-semibold text-gray-700 hover:text-blue-700 focus:text-blue-700"
+                >
+                  Forgot Password?
+                </button>
+              </div>
+
+              <button
+                type="submit"
+                className="w-full block bg-blue-500 hover:bg-blue-400 focus:bg-blue-400 text-white font-semibold rounded-lg px-4 py-3 mt-6"
+              >
+                Log In
+              </button>
+            </form>
+
+            <hr className="my-6 border-gray-300 w-full" />
+
             <button
-              type="submit"
-              className="py-3 bg-blue-600 hover:bg-blue-700 text-white rounded transition"
+              type="button"
+              className="w-full block bg-white hover:bg-gray-100 focus:bg-gray-100 text-gray-900 font-semibold rounded-lg px-4 py-3 border border-gray-300"
             >
-              Login
+              <div className="flex items-center justify-center">
+                {/* Google login SVG */}
+                <span className="ml-4">Log in with Google</span>
+              </div>
             </button>
-          </form>
-          <p className="text-white">
-            Don't have an account?{" "}
-            <button
-              className="text-blue-300 hover:text-blue-400"
-              onClick={() => setIsLogin(false)}
-            >
-              Sign Up
-            </button>
-          </p>
+
+            <p className="mt-8">
+              Need an account?{" "}
+              <a
+                href="#"
+                className="text-blue-500 hover:text-blue-700 font-semibold"
+              >
+                Create an account
+              </a>
+            </p>
+          </div>
         </div>
-
-        {/* Signup Form */}
-        <div
-          className={`flex flex-col items-center justify-center p-10 w-1/2 space-y-4 ${
-            isLogin ? "opacity-0 pointer-events-none" : "opacity-100"
-          } transition-opacity duration-500`}
-        >
-          <h2 className="text-3xl font-bold text-white">Sign Up</h2>
-          <form className="flex flex-col gap-4 w-full">
-            <input
-              type="text"
-              placeholder="Username"
-              className="p-3 rounded bg-white bg-opacity-20 placeholder-white text-white outline-none focus:ring-2 focus:ring-green-400"
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              className="p-3 rounded bg-white bg-opacity-20 placeholder-white text-white outline-none focus:ring-2 focus:ring-green-400"
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              className="p-3 rounded bg-white bg-opacity-20 placeholder-white text-white outline-none focus:ring-2 focus:ring-green-400"
-            />
-            <button
-              type="submit"
-              className="py-3 bg-green-600 hover:bg-green-700 text-white rounded transition"
-            >
-              Sign Up
-            </button>
-          </form>
-          <p className="text-white">
-            Already have an account?{" "}
-            <button
-              className="text-green-300 hover:text-green-400"
-              onClick={() => setIsLogin(true)}
-            >
-              Login
-            </button>
-          </p>
+        <div className="bg-blue-600 hidden lg:block w-full md:w-1/2 xl:w-2/3 h-screen">
+          <img
+            src="https://images.unsplash.com/photo-1444313431167-e7921088a9d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1441&q=100"
+            alt=""
+            className="w-full h-full object-cover"
+          />
         </div>
-      </div>
+      </section>
     </div>
   );
-};
+}
 
 export default Login;
