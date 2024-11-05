@@ -134,3 +134,24 @@ background-blend-mode: overlay;
     width: 200px;
     object-fit: contain;
 }
+
+/* .achivement-custom-box:hover a, .achivement-custom-box:hover p{
+  color: white;
+  transition: .1s ease;
+} */
+.achievement-icon-custom {
+  background: linear-gradient(to top right, #2563EB, #60A5FA);
+}
+
+.achivement-custom-box:hover a ,.achivement-custom-box:hover p{
+color: white;
+}
+
+@media (min-width:768px){
+  .achievements-custom-alignment{
+    max-width: 50%;
+  }
+  .product-custom-alignment{
+max-width: 87%;
+  }
+}
