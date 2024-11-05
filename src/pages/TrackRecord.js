@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 function TrackRecord() {
   const people = [
@@ -42,40 +43,63 @@ function TrackRecord() {
 
   return (
     <div className="my-10">
-      <div>
-        <h6 className="text-xl text-center font-medium text-black-600 my-5 mb-1">
-          Our Track Recorded
+      {/* Title Section with Left to Right Animation */}
+      <motion.div
+        className="text-center mb-10"
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <h6 className="text-xl font-medium text-black-600 my-5 mb-1">
+          Our Track Record
         </h6>
-        <h1 className="text-3xl font-bold text-center text-slate-800 my-3 mt-2">
+        <h1 className="text-3xl font-bold text-slate-800 my-3 mt-2">
           TopPay at a glance
         </h1>
-        <p className="my-6 mt-2 text-center mx-auto w-full lg:max-w-screen-sm">
+        <p className="my-6 mt-2 mx-auto w-full lg:max-w-screen-sm">
           We've spent 20+ years tracking financial technology challenges with
           early-stage startups, emerging companies, and established brands to
           launch and scale innovative payment processing and digital banking
           programs.
         </p>
-      </div>
+      </motion.div>
 
+      {/* Card Section with Sequential Animations */}
       <div className="flex flex-wrap">
         {people.map((person, index) => (
-          <div
+          <motion.div
             key={index}
-            className="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4 hover:translate-y-[-10px] transform transition-transform duration-500"
+            className="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.5,
+              delay: index * 0.3, // Delay each card animation by 0.2 seconds
+            }}
+            viewport={{ once: true }}
           >
             <div className="flex flex-col">
               <a href="#" className="mx-auto">
-                <img
+                <motion.img
                   className="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
                   src={person.photo}
                   alt={person.name}
+                  whileHover={{ scale: 1.05 }} // Slight zoom on hover
+                  transition={{ type: "spring", stiffness: 300 }}
                 />
               </a>
 
               <div className="text-center mt-6">
-                <h1 className="text-gray-900 text-xl font-bold mb-1">
+                <motion.h1
+                  className="text-gray-900 text-xl font-bold mb-1"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                >
                   {person.name}
-                </h1>
+                </motion.h1>
                 <div className="text-gray-700 font-light mb-2">
                   {person.role}
                 </div>
@@ -108,7 +132,7 @@ function TrackRecord() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
