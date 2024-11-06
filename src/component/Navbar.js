@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
-
+import navlogo from "./../assets/navlogo.png";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -9,10 +9,15 @@ const Navbar = () => {
   };
 
   return (
-    <>
-      <nav className="flex items-center w-full bg-transparent justify-between p-4 bg-gray-800 mx-auto">
-        <div className="text-slate-700 text-lg font-bold">Logo</div>
-        <div className="flex-grow flex text-slate-700 justify-center hidden md:flex space-x-5 font-medium">
+    <div className="bg-blue-100">
+      <nav
+        className="flex items-center w-full bg-transparent justify-between p-4 mx-auto"
+        style={{ maxWidth: "88%" }}
+      >
+        <div className="text-slate-700 text-lg font-bold">
+          <h6>NavLogo</h6>
+        </div>
+        <div className="flex-grow flex text-slate-700 justify-center md:hidden space-x-5 font-medium hidden">
           <Link to="/" className="relative group hover:text-blue-600">
             Home
             <span className="block h-0.5 bg-blue-600 transition-all duration-300 scale-x-0 group-hover:scale-x-100" />
@@ -33,7 +38,7 @@ const Navbar = () => {
 
         <div className="hidden md:flex">
           <div class="banner">
-            <a href="/signup" className="butn px-4 py-2 butn__new">
+            <a href="/signup" className="butn bg-gray-300 px-4 py-2 butn__new">
               <button>Sign Up</button>
             </a>
           </div>
@@ -72,30 +77,47 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isOpen && (
           <div
-            className="absolute top-16 left-0 right-0 bg-gray-800 p-4 md:hidden"
+            className="absolute top-16 left-0 right-0 bg-blue-100 p-4 md:hidden"
             style={{ top: "60px" }}
           >
             <div className="flex flex-col items-center">
-              <a href="/" className="text-white py-2">
+              <a href="/" className="text-white hidden py-2">
                 Home
               </a>
-              <a href="/about" className="text-white py-2">
+              <a href="/about" className="text-white hidden  py-2">
                 About
               </a>
-              <a href="/services" className="text-white py-2">
+              <a href="/services" className="text-white hidden  py-2">
                 Services
               </a>
-              <a href="/contact" className="text-white py-2">
+              <a href="/contact" className="text-white hidden  py-2">
                 Contact
               </a>
-              <button className="bg-blue-500 text-white px-4 py-2 rounded">
-                Sign Up
-              </button>
+              <div className="flex flex-col gap-5 py-8">
+                <div class="banner">
+                  <a
+                    href="/signup"
+                    className="butn bg-gray-300 px-4 py-2 butn__new w-full"
+                    style={{ margin: "0px" }}
+                  >
+                    <button>Sign Up</button>
+                  </a>
+                </div>
+                <div class="banner">
+                  <a
+                    href="/login"
+                    className="butn px-4 py-2 butn__new m-0 w-full"
+                    style={{ margin: "0px" }}
+                  >
+                    <button>Login</button>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         )}
       </nav>
-    </>
+    </div>
   );
 };
 

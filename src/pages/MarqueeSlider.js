@@ -23,13 +23,40 @@ const settings = {
   infinite: true,
   speed: 5000, // Adjust speed for a smooth scrolling effect
   autoplay: true,
-  rtl:true,
-  autoplaySpeed: 0, 
-  slidesToShow: 5, 
-  slidesToScroll: 1, 
-  cssEase: "linear", 
-  draggable: false, 
+  rtl: true,
+  autoplaySpeed: 0,
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  cssEase: "linear",
+  draggable: false,
+  responsive: [
+    {
+      breakpoint: 1200, // For large screens
+      settings: {
+        slidesToShow: 4,
+      },
+    },
+    {
+      breakpoint: 992, // For medium screens (e.g., tablets)
+      settings: {
+        slidesToShow: 3,
+      },
+    },
+    {
+      breakpoint: 768, // For smaller tablets and large mobile screens
+      settings: {
+        slidesToShow: 2,
+      },
+    },
+    {
+      breakpoint: 576, // For mobile screens
+      settings: {
+        slidesToShow: 2,
+      },
+    },
+  ],
 };
+
 
   // Duplicate logos array to achieve seamless effect
   const logos = [

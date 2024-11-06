@@ -3,11 +3,11 @@ import React from 'react'
 function Footer() {
   return (
     <div>
-      <footer class="bg-gray-900">
+      <footer class="bg-gradient-to-r from-blue-800 to-blue-400 to-black">
         <div class="max-w-screen-xl px-4 pt-16 pb-6 mx-auto sm:px-6 lg:px-8 lg:pt-24">
           <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
             <div>
-              <div class="flex justify-center text-teal-300 sm:justify-start">
+              <div class="flex justify-start text-white sm:justify-start">
                 <svg
                   class="h-8"
                   viewBox="0 0 118 24"
@@ -57,18 +57,21 @@ function Footer() {
                 </svg>
               </div>
 
-              <p class="max-w-md mx-auto mt-6 leading-relaxed text-center text-gray-400 sm:max-w-xs sm:mx-0 sm:text-left">
+              <p
+                class="max-w-md mx-auto mt-6 leading-relaxed text-left text-white sm:max-w-xs sm:mx-0 sm:text-left"
+                style={{ marginLeft: "0px" }}
+              >
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 Incidunt consequuntur amet culpa cum itaque neque.
               </p>
 
-              <ul class="flex justify-center gap-6 mt-8 md:gap-8 sm:justify-start">
+              <ul class="flex justify-start gap-6 mt-8 md:gap-8 sm:justify-start">
                 <li>
                   <a
                     href="/"
                     rel="noopener noreferrer"
                     target="_blank"
-                    class="text-teal-500 transition hover:text-teal-500/75"
+                    class="text-white transition hover:text-teal-500/75"
                   >
                     <span class="sr-only">Facebook</span>
                     <svg
@@ -91,7 +94,7 @@ function Footer() {
                     href="/"
                     rel="noopener noreferrer"
                     target="_blank"
-                    class="text-teal-500 transition hover:text-teal-500/75"
+                    class="text-white transition hover:text-teal-500/75"
                   >
                     <span class="sr-only">Instagram</span>
                     <svg
@@ -114,7 +117,7 @@ function Footer() {
                     href="/"
                     rel="noopener noreferrer"
                     target="_blank"
-                    class="text-teal-500 transition hover:text-teal-500/75"
+                    class="text-white transition hover:text-teal-500/75"
                   >
                     <span class="sr-only">Twitter</span>
                     <svg
@@ -133,7 +136,7 @@ function Footer() {
                     href="/"
                     rel="noopener noreferrer"
                     target="_blank"
-                    class="text-teal-500 transition hover:text-teal-500/75"
+                    class="text-white transition hover:text-teal-500/75"
                   >
                     <span class="sr-only">GitHub</span>
                     <svg
@@ -156,7 +159,7 @@ function Footer() {
                     href="/"
                     rel="noopener noreferrer"
                     target="_blank"
-                    class="text-teal-500 transition hover:text-teal-500/75"
+                    class="text-white transition hover:text-teal-500/75"
                   >
                     <span class="sr-only">Dribbble</span>
                     <svg
@@ -177,7 +180,7 @@ function Footer() {
             </div>
 
             <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2 md:grid-cols-4">
-              <div class="text-center sm:text-left">
+              <div class="text-left sm:text-left">
                 <p class="text-lg font-medium text-white">About Us</p>
 
                 <nav class="mt-8">
@@ -221,7 +224,7 @@ function Footer() {
                 </nav>
               </div>
 
-              <div class="text-center sm:text-left">
+              <div class="text-left sm:text-left">
                 <p class="text-lg font-medium text-white">Our Services</p>
 
                 <nav class="mt-8">
@@ -265,7 +268,7 @@ function Footer() {
                 </nav>
               </div>
 
-              <div class="text-center sm:text-left">
+              <div class="text-left sm:text-left">
                 <p class="text-lg font-medium text-white">Helpful Links</p>
 
                 <nav class="mt-8">
@@ -290,7 +293,7 @@ function Footer() {
 
                     <li>
                       <a
-                        class="flex group justify-center sm:justify-start gap-1.5"
+                        class="flex group justify-start sm:justify-start gap-1.5"
                         href="/"
                       >
                         <span class="text-white transition group-hover:text-white/75">
@@ -307,13 +310,13 @@ function Footer() {
                 </nav>
               </div>
 
-              <div class="text-center sm:text-left">
+              <div class="text-left sm:text-left">
                 <p class="text-lg font-medium text-white">Contact Us</p>
 
                 <ul class="mt-8 space-y-4 text-sm">
                   <li>
                     <a
-                      class="flex items-center justify-center sm:justify-start gap-1.5 group"
+                      class="flex items-center justify-start sm:justify-start gap-1.5 group"
                       href="/"
                     >
                       <svg
@@ -339,7 +342,7 @@ function Footer() {
 
                   <li>
                     <a
-                      class="flex items-center justify-center sm:justify-start gap-1.5 group"
+                      class="flex items-center justify-start sm:justify-start gap-1.5 group"
                       href="/"
                     >
                       <svg
@@ -363,7 +366,7 @@ function Footer() {
                     </a>
                   </li>
 
-                  <li class="flex items-start justify-center gap-1.5 sm:justify-start">
+                  <li class="flex items-start justify-start gap-1.5 sm:justify-start">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="w-5 h-5 text-white shrink-0"
@@ -393,29 +396,31 @@ function Footer() {
             </div>
           </div>
 
-          <div class="pt-6 mt-12 border-t border-gray-800">
-            <div class="text-center sm:flex sm:justify-between sm:text-left">
-              <p class="text-sm text-gray-400">
-                <span class="block sm:inline">All rights reserved.</span>
+          <div class="pt-6 mt-12 border-t border-white">
+            <div class="text-left sm:flex sm:justify-between sm:text-left">
+              <div>
+                <p class="text-sm text-white">
+                  <span class="block sm:inline">All rights reserved.</span>
 
-                <a
-                  class="inline-block text-teal-500 underline transition hover:text-teal-500/75"
-                  href="/"
-                >
-                  Terms & Conditions
-                </a>
+                  <a
+                    class="inline-block text-white underline transition hover:text-teal-500/75"
+                    href="/"
+                  >
+                    Terms & Conditions
+                  </a>
 
-                <span>&middot;</span>
+                  <span>&middot;</span>
 
-                <a
-                  class="inline-block text-teal-500 underline transition hover:text-teal-500/75"
-                  href="/"
-                >
-                  Privacy Policy
-                </a>
-              </p>
+                  <a
+                    class="inline-block text-white underline transition hover:text-teal-500/75"
+                    href="/"
+                  >
+                    Privacy Policy
+                  </a>
+                </p>
+              </div>
 
-              <p class="mt-4 text-sm text-gray-500 sm:order-first sm:mt-0">
+              <p class="mt-4 text-sm text-white sm:order-first sm:mt-0">
                 &copy; 2022 Company Name
               </p>
             </div>

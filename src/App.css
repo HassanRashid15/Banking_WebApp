@@ -1,4 +1,6 @@
-/* component/Preloader.css */
+body , html{
+  overflow-x: hidden !important;
+}
 .preloader {
   position: fixed;
   top: 0;
@@ -155,4 +157,26 @@ color: white;
   .product-custom-alignment{
 max-width: 87%;
   }
+.newsletter-img-custom{
+  padding-top: 40px;
+   
+}
+
+}
+
+.hero-section-content h1{
+  font-size: 4rem;
+  font-weight: bold;
+}
+@media(max-width:1023px){
+.hero-section-content h1{
+  font-size: 4rem;
+}
+}
+@media(max-width:767px){
+.hero-section-content h1{
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: 500;
+}
 }

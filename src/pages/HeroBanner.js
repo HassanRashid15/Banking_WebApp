@@ -18,10 +18,10 @@ function HeroBanner() {
             style={{ maxWidth: "90%" }}
           >
             <div className="grid grid-cols-1 gap-14 items-center lg:grid-cols-12 lg:gap-32">
-              <div className="w-full xl:col-span-5 lg:col-span-6 2xl:-mx-5 xl:-mx-0">
+              <div className="w-full xl:col-span-5 hero-section-content lg:col-span-6 2xl:-mx-5 xl:-mx-0">
                 {/* Add animation for text and title */}
                 <motion.div
-                  className="flex items-center text-sm font-medium text-gray-500 justify-center lg:justify-start"
+                  className="flex items-center text-sm font-medium text-gray-500 justify-start lg:justify-start"
                   initial={{ opacity: 0, x: -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6 }}
@@ -33,7 +33,7 @@ function HeroBanner() {
                 </motion.div>
                 {/* Animated Title */}
                 <motion.h1
-                  className="py-8 text-center text-gray-900 font-bold font-manrope text-5xl lg:text-left leading-[70px] pt-0"
+                  className="py-8 text-left text-gray-900 lg:text-left leading-[70px]"
                   initial={{ opacity: 0, y: -50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8 }}
@@ -41,7 +41,7 @@ function HeroBanner() {
                 >
                   Expanding the
                   <span
-                    className="text-blue-500"
+                    className="text-blue-400"
                     style={{ padding: "0px 5px" }}
                   >
                     Financial
@@ -50,7 +50,7 @@ function HeroBanner() {
                 </motion.h1>
                 {/* Animated Subtitle */}
                 <motion.p
-                  className="text-gray-500 text-lg text-center lg:text-left"
+                  className="text-gray-500 text-lg text-left md:text-center lg:text-left"
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8 }}

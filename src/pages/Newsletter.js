@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-
+import mobileapp from "../assets/mobileapp.png";
 function Newsletter() {
   return (
-    <div className="product-custom-alignment bg-red-500 mx-auto w-full my-20 rounded-xl">
+    <div className="product-custom-alignment bg-gray-200 mx-auto w-full my-20 rounded-xl">
       <div className="grid grid-flow-col grid-rows-2 sm:grid-rows-1 sm:grid-cols-2 gap-4">
         <div className="flex items-center justify-center">
           <main className="max-w-screen-xl px-4 lg:px-16">
@@ -55,16 +55,16 @@ function Newsletter() {
 
         {/* Image animates from right to left */}
         <motion.div
-          className="w-full h-72 lg:w-full md:h-screen overflow-hidden"
+          className="w-full h-72 lg:w-full  overflow-hidden"
           initial={{ opacity: 0, x: 20 }} // Start from the right
           whileInView={{ opacity: 1, x: 0 }} // Animate to final position
           transition={{ duration: 1 }} // Duration of the animation
           viewport={{ once: true }} // Animate once when in view
         >
           <img
-            src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
+            src={mobileapp}
             alt="TopPay"
-            className="object-cover w-full h-full"
+            className=" newsletter-img-custom object-contain w-full h-full"
           />
         </motion.div>
       </div>
